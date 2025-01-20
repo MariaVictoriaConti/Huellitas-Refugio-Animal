@@ -16,7 +16,7 @@ const app = express();
 
 app.use(cors(corsOptions));
 
-const dataPath = path.join(__dirname, 'data.json');
+const dataPath = path.join(__dirname, 'data/data.json');
 
 app.use(bodyParser.json());
 //app.use(express.json());
@@ -53,7 +53,7 @@ const validateAnimal = (req, res, next) => {
 
 //ROUTES
 app.get('/', (req, res) => {
-    //res.send('Huellitas - Refugio Animal');
+    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 });
 
 app.get('/animals', (req, res) => {

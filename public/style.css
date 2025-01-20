@@ -26,6 +26,16 @@ h1{
 .card-body{
     text-align: center;
 }
+.cardTodas{
+    color: black;
+    width: 25%;
+    height: 25%;
+}
+#allHuellitas{
+    display: flex;
+    flex-wrap: wrap;
+
+}
 
 .btn-primary, .btn-secondary{
     background-color: #ebcf7a;
