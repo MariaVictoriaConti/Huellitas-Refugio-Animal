@@ -3,17 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const PORT = process.env.PORT || 3000;
+
 
 //Como hacemos para unir el front con el back??
-const corsOptions = {
-    origin: 'http://127.0.0.1:5500/public/index.html/',  // Asegúrate de que este sea el puerto donde corre tu frontend
-    methods: 'GET,POST,PUT,DELETE'
-};
+ const corsOptions = {
+     origin: '*',  // Asegúrate de que este sea el puerto donde corre tu frontend
+     methods: 'GET,POST,PUT,DELETE',
+     allowedHeaders: ['Content-Type', 'Authorization'],
+ };
 const app = express();
 
 app.use(cors(corsOptions));
 
-const PORT = process.env.PORT || 3000;
 const dataPath = path.join(__dirname, 'data.json');
 
 app.use(bodyParser.json());
@@ -51,7 +53,7 @@ const validateAnimal = (req, res, next) => {
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.send('Huellitas - Refugio Animal');
+    //res.send('Huellitas - Refugio Animal');
 });
 
 app.get('/animals', (req, res) => {
@@ -71,11 +73,11 @@ app.get('/animals/:id', (req, res) => {
 
 app.post('/animals', validateAnimal, (req, res) => {
     const data = readData();
-    const { name, age, adopted } = req.body;
+    const { nombre, edad, disponible } = req.body;
     const newAnimal = {
-        id: data.length + 1, name: name, age: age, adopted: adopted
+        id: data.length + 1, nombre: nombre, edad: edad, disponible: disponible
     }
-const animal = data.find(animal => animal.name === name);
+const animal = data.find(animal => animal.name === nombre);
     if (animal) {
         res.status(400).json({ message: "Animal ya existe" });
         return;

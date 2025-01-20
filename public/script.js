@@ -22,31 +22,50 @@ document.getElementById("huellitaForm").addEventListener("submit", function(e) {
 
 
     // Crear un objeto para enviar
-    const huellitaData = {
+    let huellitaData = {
         nombre: nombre,
         edad: edad,
         disponible: disponible
     };
+    let huellitaDataJson = JSON.stringify(huellitaData);
+
+//Realizar la solicitud GET usando fetch
+fetch('http://localhost:3000/', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+})
+.catch(error => {
+    console.error('Error:', error);
+});
 
     // Realizar la solicitud POST usando fetch
-    fetch(`http://localhost:3000/animals/`, {
+    fetch('http://localhost:3000/animals', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(huellitaData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert('Huellita añadida exitosamente');
-        console.log(data);
-        document.getElementById("addHuellitaForm").style.display = "none"; // Ocultar el formulario
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Ocurrió un error al añadir la huellita');
-    });
-});
+        
+         headers: {
+             'Content-Type': 'application/json',
+         },
+         body: huellitaDataJson, 
+    }
+)
+
+     .then(response => response.json())
+      .then(data => {
+         alert('Huellita añadida exitosamente');
+         console.log(data);
+         document.getElementById("addHuellitaForm").style.display = "none"; // Ocultar el formulario
+      })
+     .catch(error => {
+          console.error('Error:', error);
+          alert('Ocurrió un error al añadir la huellita');
+      });
+ });
 
 
 

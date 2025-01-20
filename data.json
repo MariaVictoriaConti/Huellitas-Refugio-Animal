@@ -28,5 +28,14 @@
     "name": "LOLO",
     "age": 1,
     "adopted": true
+  },
+  {
+    "id": 6
+  },
+  {
+    "id": 7,
+    "nombre": "Ona",
+    "edad": "10",
+    "disponible": "true"
   }
 ]
