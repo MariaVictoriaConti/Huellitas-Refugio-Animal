@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 //Como hacemos para unir el front con el back??
  const corsOptions = {
-     origin: '*',  // Asegúrate de que este sea el puerto donde corre tu frontend
+     origin: '*',  
      methods: 'GET,POST,PUT,DELETE',
      allowedHeaders: ['Content-Type', 'Authorization'],
  };
@@ -19,7 +19,6 @@ app.use(cors(corsOptions));
 const dataPath = path.join(__dirname, 'data/data.json');
 
 app.use(bodyParser.json());
-//app.use(express.json());
 
 //funciones para leer // estas serian funciones de utils
 const readData = () => {

@@ -22,9 +22,8 @@
                     <img src="img/8630408.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Coco</h5>
+                        <p class="card-text">Amo jugar con pelotas! Soy tranquilo y bueno</p>
                             <a href="#" class="btn btn-primary">Quiero adoptar</a>
                     </div>
                 </div>
@@ -34,9 +33,8 @@
                     <img src="img/8630408.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Ramon</h5>
+                        <p class="card-text">Soy loco por los chicos, los cuido y me encanta jugar con ellos.</p>
                             <a href="#" class="btn btn-primary">Quiero adoptar</a>
                     </div>
                 </div>
@@ -46,9 +44,8 @@
                     <img src="img/8630408.jpg"
                         class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
+                        <h5 class="card-title">Firu</h5>
+                        <p class="card-text">El mas tranquilo del equipo, puro amor. Especial para los niños</p>
                         <a href="#" class="btn btn-primary">Quiero adoptar</a>
                     </div>
                 </div>
@@ -56,14 +53,26 @@
             </div>
         </div>
         <div class="btn-all" >
-        <button class="botones" id="allHuellitas"> Ver Todas las Huellitas</button>        
+        <button class="botones" id="allHuellitas"> Ver Todas las Huellitas</button>  
+
         <button class="botones" id="buscarHuellita">Buscar Huellita por ID</button>
+        <div id="buscarHuellitaForm" style="display: none;">
+            <h2 class="botones">Buscar Huellita por ID</h2>
+            <form id="huellitaForm" class="botones">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="number" class="form-control" id="id" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+            </form>
+        </div>
 
         <button class="botones">Editar Huellita</button>
         <button class="botones">Eliminar Huellita</button>
         <button class="botones" id="addHuellitaBtn">Añadir Huellita</button>
 
-        </>
+        
 
         <!-- Formulario para añadir una nueva huellita -->
         <div id="addHuellitaForm" style="display: none;">

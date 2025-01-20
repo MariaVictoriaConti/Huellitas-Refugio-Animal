@@ -49,5 +49,23 @@
     "nombre": "sofi",
     "edad": "7",
     "disponible": "false"
+  },
+  {
+    "id": 10,
+    "nombre": "as",
+    "edad": "2",
+    "disponible": "false"
+  },
+  {
+    "id": 11,
+    "nombre": "Flor",
+    "edad": "2",
+    "disponible": "false"
+  },
+  {
+    "id": 12,
+    "nombre": "Oli",
+    "edad": "3",
+    "disponible": "true"
   }
 ]

@@ -31,6 +31,14 @@ h1{
     width: 25%;
     height: 25%;
 }
+.cardPorId{
+    width: 25%; 
+    height: 25%;
+}
+#buscarHuellitaForm{
+    display: flex;
+    justify-content: center;
+}
 #allHuellitas{
     display: flex;
     flex-wrap: wrap;
