@@ -1,0 +1,71 @@
+body{
+    background-color: #ebcf7a;
+}
+.NombrePrincipal{
+    font-size: 150px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(116, 110, 159);
+}
+
+.container{
+ display: flex; 
+}
+
+h1{
+    border: 1px solid rgb(116, 110, 159);
+    background-color: thistle;
+    border-radius: 50px ;
+}
+
+.card{
+    max-width: 100%;
+    margin: 50px;
+    background-color: antiquewhite;
+}
+.card-body{
+    text-align: center;
+}
+.cardTodas{
+    color: black;
+    width: 25%;
+    height: 25%;
+}
+.cardPorId{
+    width: 25%; 
+    height: 25%;
+}
+#buscarHuellitaForm{
+    display: flex;
+    justify-content: center;
+}
+#allHuellitas{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.btn-primary, .btn-secondary{
+    background-color: #ebcf7a;
+    border: none;
+    color: black;   
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.btn-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.botones{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(116, 110, 159);
+    color: white;
+    border: 1px solid rgb(116, 110, 159);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 30px;
+}

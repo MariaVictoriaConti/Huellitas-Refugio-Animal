@@ -3,7 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const { readData, writeData } = require('./utils/utils');
+const validateAnimal = require('./middleware/validateDates');
 const PORT = process.env.PORT || 3000;
+
+const app = express();
+app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Como hacemos para unir el front con el back??
@@ -12,41 +19,20 @@ const PORT = process.env.PORT || 3000;
      methods: 'GET,POST,PUT,DELETE',
      allowedHeaders: ['Content-Type', 'Authorization'],
  };
-const app = express();
-
 app.use(cors(corsOptions));
 
-const dataPath = path.join(__dirname, 'data/data.json');
 
-app.use(bodyParser.json());
+//const dataPath = path.join(__dirname, 'data/data.json');
 
-//funciones para leer // estas serian funciones de utils
-const readData = () => {
-    try {
-        const data = fs.readFileSync(dataPath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.log("Error al leer el archivo de datos.", error);
-    }
-};
 
-//y escribir datos en el json(Base de datos) // funciones de utils
-const writeData = (data) => {
-    try {
-        fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
-    } catch (error) {
-        console.log(error);
-    }
-};
-
-//middlewares para validar datos ingresaados en el body en operaciones post
-const validateAnimal = (req, res, next) => {
-    const { nombre, edad, disponible } = req.body;
-    if (!nombre || !edad || !disponible) {
-        return    res.status(400).json({ error: 'Faltan datos obligatorios.' })
-    }
-    next();
-    }
+// //middlewares para validar datos ingresaados en el body en operaciones post
+// const validateAnimal = (req, res, next) => {
+//     const { nombre, edad, disponible } = req.body;
+//     if (!nombre || !edad || !disponible) {
+//         return    res.status(400).json({ error: 'Faltan datos obligatorios.' })
+//     }
+//     next();
+//     }
 
 
 
